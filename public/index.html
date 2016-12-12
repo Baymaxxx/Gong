@@ -10,7 +10,7 @@
     <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
-    <title>1</title>
+    <title>注册</title>
     <style>
         .g-register{
             font-size: 0.4rem;
@@ -91,17 +91,17 @@
         </div>
         <div class="u-group">
             <label for="mail">邮箱</label>
-            <input type="mail" name="mail">
+            <input type="email" name="mail">
         </div>
         <div class="u-group">
             <label for="code">验证码</label>
             <div class="code-outer">
-                <input type="text" name="code">
+                <input type="number" name="code">
                 <button type="button" class="code">点击发送验证码</button>
             </div>
         </div>
     </form>
-    <button type="button" class="m-order btn">提交预约</button>
+    <button type="button" class="m-order btn" id="orderBtn">提交预约</button>
 </div>
 <script type="text/javascript" src="js/lib/require.js"></script>
 <script type="text/javascript">
