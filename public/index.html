@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>1</title>
+    <style>
+        .g-register{
+            font-size: 0.4rem;
+            width: 100%;
+            height: 100%;
+            color: #666;
+            overflow: hidden;
+        }
+        .m-form{
+            width: 11rem;
+            margin: 0 auto;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .m-form .u-group{
+            width: 9rem;
+        }
+        .m-form .u-group label{
+            width: 2rem;
+            height: 1.8rem;
+            margin-right: .2rem;
+            line-height: 2rem;
+            display: inline-block;
+            text-align: right;
+        }
+        .m-form .u-group input{
+            width: 6rem;
+            height: 1rem;
+            padding: 0 0 0 0.2rem;
+            border: 1px solid #999;
+            font-size: 0.4rem;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+        .m-form .u-group .code{
+            width: 2.8rem;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background-color: #f5f5f5;
+            border: 1px solid #999;
+            font-size: 0.3rem;
+            color: #666;
+        }
+        .m-form .u-group .code-outer{
+            position: relative;
+            width: 6.25rem;
+            display: inline-block;
+        }
+        .m-order{
+            width: 70%;
+            height: 1.3rem;
+            margin: 0 auto;
+            display: block;
+            box-shadow: 1px 1px 1px #999;
+        }
+    </style>
+</head>
+<body>
+<!-- 注册页 -->
+<div class="g-register">
+    <form class="m-form">
+        <div class="u-group">
+            <label for="name">姓名</label>
+            <input type="text" name="name">
+        </div>
+        <div class="u-group">
+            <label for="company">公司名称</label>
+            <input type="text" name="company">
+        </div>
+        <div class="u-group">
+            <label for="duty">职务</label>
+            <input type="text" name="duty">
+        </div>
+        <div class="u-group">
+            <label for="phone">手机</label>
+            <input type="tel" name="phone">
+        </div>
+        <div class="u-group">
+            <label for="mail">邮箱</label>
+            <input type="mail" name="mail">
+        </div>
+        <div class="u-group">
+            <label for="code">验证码</label>
+            <div class="code-outer">
+                <input type="text" name="code">
+                <button type="button" class="code">点击发送验证码</button>
+            </div>
+        </div>
+    </form>
+    <button type="button" class="m-order btn">提交预约</button>
+</div>
+<script type="text/javascript" src="js/lib/require.js"></script>
+<script type="text/javascript">
+    require(['js/common.js'],function(common){
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        });
+    });
+</script>
+</body>
+</html>
