@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>开始分析</title>
+    <style>
+        .g-startAnalyze{
+            font-size: 0.4rem;
+            color: #666;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .m-content{
+            width: 8rem;
+            height: 5rem;
+            margin: 0 auto;
+            padding-top: 10%;
+        }
+    </style>
+</head>
+<body>
+<!-- 开始分析页面 -->
+<div class="g-startAnalyze">
+    <div class="m-content">
+        <h3 class="u-title">注意事项</h3>
+        <p class="u-line-title"></p>
+        <p>
+            出于某种原因，我们希望您花点时间来做一些测试题，以方便我们帮助您分析你需要的套餐，
+            分析结果会发送到您的注册邮箱，请注意查收。
+        </p>
+        <p>
+            如果未收到，可能是被当做垃圾邮件了，请手动查找一下，谢谢。
+        </p>
+        <div class="btn-start btn">开始</div>
+    </div>
+</div>
+<script type="text/javascript" src="js/lib/require.js"></script>
+<script type="text/javascript">
+    require(['js/common.js'],function(common){
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        });
+    });
+</script>
+</body>
+</html>
