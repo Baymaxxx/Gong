@@ -10,7 +10,7 @@
     <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
-    <title>开始分析</title>
+    <title>分析</title>
     <style>
         .g-startAnalyze{
             font-size: 0.4rem;
@@ -29,10 +29,10 @@
             text-align: center;
             background-color: #fff;
         }
-        .m-content .u-title{
+        .m-content .u-line-p1{
             padding-top: 1.5rem;
             box-sizing: border-box;
-            font-size: .6rem;
+            font-size: .5rem;
             font-weight: 400;
         }
         .m-content .u-line-title{
@@ -41,37 +41,53 @@
             margin: .5rem auto;
             background-color: #4d4d4d;
         }
-        .m-content .u-content{
-            font-size: .23rem;
-            line-height: 0.4rem;
-            width: 90%;
-            white-space: nowrap;
+        .m-content .u-select-list{
+            text-align: left;
+            width: 84%;
             margin: 0 auto;
         }
-        .m-content .btn-start{
-            width: 4rem;
-            height: 4rem;
-            line-height: 4rem;
-            border-radius: 50%;
-            box-shadow: -20px 30px 100px 10px #a8a8a8;
-            text-align: center;
-            font-size: 1rem;
-            margin: 1rem auto;
-            color: #fff;
+        .m-content .u-select-list li{
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+        .m-content .u-select-list .check{
+            float: left;
+            width: 8%;
+            height: .38rem;
+            background-color: #137137;
+            display: inline-block;
+            margin-right: 2%;
+        }
+        .m-content .u-select-list .checked{
             background-color: #e9342c;
+        }
+        .m-content .u-select-list .select{
+            float: left;
+            width: 90%;
+        }
+        .m-content .btn-next{
+            width: 84%;
+            height: 1.2rem;
+            margin: 1.5rem auto 0;
+            display: block;
+            box-shadow: 2px 2px 60px #999;
+            border-radius: 0.15rem;
         }
     </style>
 </head>
 <body>
-<!-- 开始分析页面 -->
+<!-- 分析页面 -->
 <div class="g-startAnalyze">
     <div class="m-content">
-        <h3 class="u-title">简要结果</h3>
+        <p class="u-line-p1">1)您的家庭资产总额在？</p>
         <p class="u-line-title"></p>
-        <p class="u-line-p1 u-content">
-            分析结果显示，您是一名优秀的共产主义战士。一名忠诚的无产主义者
-        </p>
-        <div class="btn-start btn" id="startBtn">开始</div>
+        <ul class="u-select-list">
+            <li class="clearfix"><span class="check checked"></span><span class="select">A:50万以下</span></li>
+            <li class="clearfix"><span class="check"></span><span class="select">B:50万以下50万以下50万以下50万以下50万以下50万以下50万以下50万以下50万以下</span></li>
+            <li class="clearfix"><span class="check"></span><span class="select">C:50万以下</span></li>
+            <li class="clearfix"><span class="check"></span><span class="select">D:50万以下</span></li>
+        </ul>
+        <button type="button" class="btn-next btn">下一题</button>
     </div>
 </div>
 <script type="text/javascript" src="js/lib/require.js"></script>
@@ -81,10 +97,6 @@
             document.addEventListener('touchmove', function (e) {
                 e.preventDefault();
             });
-            var startBtn = $("#startBtn");
-            startBtn.tap(function () {
-                window.location.href = 'http://localhost:8080/Gong/public/analyze.html';
-            })
         });
     });
 </script>
