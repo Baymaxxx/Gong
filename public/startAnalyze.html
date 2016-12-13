@@ -46,8 +46,8 @@
 <script type="text/javascript" src="js/lib/require.js"></script>
 <script type="text/javascript">
     require(['js/common.js'],function(common){
-        document.addEventListener('touchmove', function(e) {
-            e.preventDefault();
+        require(['jquery'], function ($) {
+            console.log($('.m-content'))
         });
     });
 </script>

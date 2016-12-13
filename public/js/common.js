@@ -17,12 +17,16 @@ var G = {
         require.config({
             baseUrl: "js/lib",
             paths: {
-                'home':'../home',
+                jquery: "zepto.min",
             },
             shim: {
-                'flexible': {
-                    exports: 'flexible'
+                jquery: {
+                    exports: "$"
                 },
+                underscore:{
+                    exports:'_'
+                },
+
             },
             urlArgs: isDebug ? "" : "v=" + Math.floor((new Date()).getTime() / 1000 / 60)
         });

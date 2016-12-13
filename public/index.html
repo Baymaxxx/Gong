@@ -22,7 +22,7 @@
         .m-form{
             width: 11rem;
             margin: 0 auto;
-            padding-top: 1rem;
+            padding-top: 16%;
             padding-bottom: 1rem;
         }
         .m-form .u-group{
@@ -75,29 +75,29 @@
     <form class="m-form">
         <div class="u-group">
             <label for="name">姓名</label>
-            <input type="text" name="name">
+            <input type="text" name="name" id="rName">
         </div>
         <div class="u-group">
             <label for="company">公司名称</label>
-            <input type="text" name="company">
+            <input type="text" name="company" id="rCompany">
         </div>
         <div class="u-group">
             <label for="duty">职务</label>
-            <input type="text" name="duty">
+            <input type="text" name="duty" id="rDuty">
         </div>
         <div class="u-group">
             <label for="phone">手机</label>
-            <input type="tel" name="phone">
+            <input type="tel" name="phone" id="rPhone">
         </div>
         <div class="u-group">
             <label for="mail">邮箱</label>
-            <input type="email" name="mail">
+            <input type="email" name="mail" id="rMail">
         </div>
         <div class="u-group">
             <label for="code">验证码</label>
             <div class="code-outer">
-                <input type="number" name="code">
-                <button type="button" class="code">点击发送验证码</button>
+                <input type="number" name="code" id="rCode">
+                <button type="button" class="code" id="codeBtn">点击发送验证码</button>
             </div>
         </div>
     </form>
@@ -106,8 +106,37 @@
 <script type="text/javascript" src="js/lib/require.js"></script>
 <script type="text/javascript">
     require(['js/common.js'],function(common){
-        document.addEventListener('touchmove', function(e) {
-            e.preventDefault();
+        require(['jquery'], function ($) {
+            document.addEventListener('touchmove', function (e) {
+                e.preventDefault();
+            });
+            //验证码
+            var getCode = $('#codeBtn');
+            var wait = 5;
+            function codeTime(btn) {
+                if (wait === 0) {
+                    btn.removeAttr("disabled");
+                    btn.html("点击发送验证码");
+                    wait = 5;
+                } else {
+                    btn.attr("disabled",true);
+                    btn.html(wait + "s");
+                    wait--;
+                    setTimeout(function () {
+                        codeTime(btn);
+                    }, 1000);
+                }
+            }
+            getCode.tap(function () {
+                if(!$(this).prop('disabled')){
+                    codeTime($(this));
+                }
+            });
+            //提交预约
+            var orderBtn = $('#orderBtn');
+            orderBtn.tap(function () {
+                window.open('localhost')
+            })
         });
     });
 </script>
