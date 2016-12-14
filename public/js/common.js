@@ -23,6 +23,7 @@ var G = {
             baseUrl: "js/lib",
             paths: {
                 jquery: "zepto.min",
+                mock:'mock-min',
             },
             shim: {
                 jquery: {
