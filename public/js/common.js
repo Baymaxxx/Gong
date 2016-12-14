@@ -1,3 +1,8 @@
+/**
+ * Returns get parameters.
+ * If the desired param does not exist, null will be returned
+ * @example value = $.getParam("paramName");
+ */
 window.getParam = function(e) {
     var d = new RegExp("(^|&)" + e + "=([^&]*)(&|$)");
     var f = window.location.search.substr(1).match(d);
@@ -5,14 +10,14 @@ window.getParam = function(e) {
         return unescape(f[2])
     }
     return null
-}
-;
+};
 window.isDebug = !!this.getParam("debug") || !!(("TiExt"in window) && !!TiExt.test);
 var G = {
     init:function () {
         this.initFlexible();
         this.initRequireJs();
     },
+    //requireJs config
     initRequireJs:function(){
         require.config({
             baseUrl: "js/lib",
@@ -42,6 +47,6 @@ var G = {
     initFlexible: function() {
         this.loadJs("js/lib/flexible.js")
     },
-}
+};
 window.G = G;
 G.init();
