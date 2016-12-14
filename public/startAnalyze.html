@@ -66,12 +66,18 @@
 <!-- 开始分析页面 -->
 <div class="g-startAnalyze">
     <div class="m-content">
-        <h3 class="u-title">简要结果</h3>
+        <h3 class="u-title">注意事项</h3>
         <p class="u-line-title"></p>
         <p class="u-line-p1 u-content">
-            分析结果显示，您是一名优秀的共产主义战士。一名忠诚的无产主义者，一个国际主义者。详细内容付费后显示
+            出于某种原因，我们希望您花点时间来做一些测试题，以方便我们帮助
         </p>
-        <div class="btn-start btn" id="startBtn">支付150元</div>
+        <p class="u-line-p2 u-content">
+            您分析你需要的套餐，分析结果会发送到您的注册邮箱，请注意查收。
+        </p>
+        <p class="u-line-p3 u-content">
+            如果未收到，可能是被当做垃圾邮件了，请手动查找一下，谢谢。
+        </p>
+        <div class="btn-start btn" id="startBtn">开始</div>
     </div>
 </div>
 <script type="text/javascript" src="js/lib/require.js"></script>
@@ -80,7 +86,6 @@
         require(['jquery'], function ($) {
             document.addEventListener('touchmove', function (e) {
                 e.preventDefault();
-
             });
             var startBtn = $("#startBtn");
             startBtn.tap(function () {

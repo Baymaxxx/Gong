@@ -1,10 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>简要结果</title>
+    <style>
+        .g-startAnalyze{
+            font-size: 0.4rem;
+            color: #666;
+            width: 100%;
+            height: 100%;
+            background-color: #6fd9a7;
+            overflow: hidden;
+        }
+        .m-content{
+            width: 80%;
+            height: 10rem;
+            border-radius: 5px;
+            box-shadow: 0px 0px 100px 4px #bfbfbf;
+            margin: 30% auto;
+            text-align: center;
+            background-color: #fff;
+        }
+        .m-content .u-title{
+            padding-top: 1.8rem;
+            box-sizing: border-box;
+            font-size: .6rem;
+            font-weight: 400;
+        }
+        .m-content .u-line-title{
+            width: 1.4rem;
+            height: 0.1rem;
+            margin: .5rem auto;
+            background-color: #4d4d4d;
+        }
+        .m-content .u-content{
+            font-size: .34rem;
+            line-height: 0.4rem;
+            width: 90%;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .m-content .btn-start{
+            width: 6.4rem;
+            height: 1.3rem;
+            line-height: 1.3rem;
+            box-shadow: -20px 30px 100px 10px #a8a8a8;
+            text-align: center;
+            font-size: 0.5rem;
+            margin: 2rem auto 0;
+            color: #fff;
+            background-color: #e9342c;
+        }
+    </style>
 </head>
 <body>
+<!-- 开始分析页面 -->
+<div class="g-startAnalyze">
+    <div class="m-content">
+        <h3 class="u-title">简要结果</h3>
+        <p class="u-line-title"></p>
+        <p class="u-line-p1 u-content">
+            分析结果显示，您是一名优秀的共产主义战士。一名忠诚的无产主义者，一个国际主义者。详细内容付费后显示
+        </p>
+        <div class="btn-start btn" id="startBtn">支付150元</div>
+    </div>
+</div>
+<script type="text/javascript" src="js/lib/require.js"></script>
+<script type="text/javascript">
+    require(['js/common.js'],function(common){
+        require(['jquery'], function ($) {
+            document.addEventListener('touchmove', function (e) {
+                e.preventDefault();
 
+            });
+            var startBtn = $("#startBtn");
+            startBtn.tap(function () {
+                window.location.href = 'http://localhost:8080/Gong/public/analyze.html';
+            })
+        });
+    });
+</script>
 </body>
 </html>
