@@ -10,6 +10,7 @@
     <link rel="Shortcut Icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/m-validate.css">
     <title>注册</title>
     <style>
         .g-register{
@@ -72,7 +73,7 @@
 <body>
 <!-- 注册页 -->
 <div class="g-register">
-    <form class="m-form">
+    <form class="m-form" name="myForm" novalidate>
         <div class="u-group">
             <label for="name">姓名</label>
             <input type="text" name="name" id="rName">
@@ -106,10 +107,39 @@
 <script type="text/javascript" src="js/lib/require.js"></script>
 <script type="text/javascript">
     require(['js/common.js'],function(common){
-        require(['jquery'], function ($) {
+        require(['jquery','mValidate'], function ($,mValidate) {
             document.addEventListener('touchmove', function (e) {
                 e.preventDefault();
             });
+            //表单验证
+            var ooo = new Mvalidate('myForm')
+            ooo.add({
+                name:'rName',
+                rules:['required'],
+                message:['姓名必须填写'],
+                callback:function(el, errorEl){
+                }
+            }).add({
+                name:'rCompany',
+                rules:['required'],
+                message:['公司名称必须填写'],
+                callback:function(el, errorEl){
+                }
+            }).add({
+                name:'rDuty',
+                rules:['required'],
+                message:['职务必须填写'],
+                callback:function(el, errorEl){
+                }
+            }).add({
+                name:'rPhone',
+                rules:[regTools.mobile],
+                message:['手机号输入错误']
+            }).add({
+                name:'rMail',
+                rules:[regTools.email],
+                message:['对不起，您填写的E-mail格式不正确！']
+            })
             //验证码
             var getCode = $('#codeBtn');
             var wait = 5;
@@ -134,8 +164,12 @@
             });
             //提交预约
             var orderBtn = $('#orderBtn');
-            orderBtn.tap(function () {
-                window.location.href = 'http://localhost:8080/Gong/public/startAnalyze.html';
+            orderBtn.tap(function (e) {
+                e.preventDefault();
+                console.log(ooo.valid())
+                if(ooo.valid()){
+                  //  window.location.href = 'http://localhost:8080/Gong/public/startAnalyze.html';
+                }
             })
         });
     });

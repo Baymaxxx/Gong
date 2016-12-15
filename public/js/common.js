@@ -24,6 +24,7 @@ var G = {
             paths: {
                 jquery: "zepto.min",
                 mock:'mock-min',
+                mValidate:'../plugins/m-validate'
             },
             shim: {
                 jquery: {
@@ -32,6 +33,9 @@ var G = {
                 underscore:{
                     exports:'_'
                 },
+                mValidate:{
+                    exports:'mValidate'
+                }
 
             },
             urlArgs: isDebug ? "" : "v=" + Math.floor((new Date()).getTime() / 1000 / 60)
